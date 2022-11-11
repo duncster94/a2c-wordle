@@ -1,2 +1,6 @@
-plots/*
+plots/board/*
+plots/diagnostics/*
 __pycache__
+data/models
+run_sbatch*
+slurm*
