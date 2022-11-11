@@ -11,7 +11,7 @@ The Wordle state is stored in a 157 dimensional vector (26 characters * 6 entrie
 
 ![a2c-wordle-state-vector](https://user-images.githubusercontent.com/25830706/201429630-039ab164-8f0e-4528-97ff-15e1c34486ed.png)
 
-A turn corresponds to a word guess from the agent. The state was updated each turn to reflect the allowable positions a character could still be occupy. In the diagram above, for example, the character **B** is correct (green) in the first position, denoted by a 1. This disallows all other characters from being present in that position so their position 1 states are updated to be -1. It is possible for **B** to be present in other positions as well as position 1 however, so those positions remain at 0 to indicate an unknown state. **Z** has been attempted and is not in the word (grey), so it is inadmissable in all positions.
+A turn corresponds to a word guess from the agent. The state was updated each turn to reflect the allowable positions a character could still occupy. In the diagram above, for example, the character **B** is correct (green) in the first position, denoted by a 1. This disallows all other characters from being present in that position so their position 1 states are updated to be -1. It is possible for **B** to be present in other positions as well as position 1 however, so those positions remain at 0 to indicate an unknown state. **Z** has been attempted and is not in the word (grey), so it is inadmissable in all positions.
 
 The reward scheme is as follows:
 - -3 for each turn to encourage taking fewer turns
