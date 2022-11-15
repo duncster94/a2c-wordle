@@ -26,7 +26,7 @@ For the agent I used the advantage actor critic (A2C) algorithm. This is similar
 The agent is a simple MLP with a policy head and a value head. I used an autoencoder to generate 32 dimensional embeddings of the Wordle vocabulary and computed logits over each word via a dot product with the policy head. The agent includes an action buffer to track which words it has used in the current Wordle game, and generate a logits mask to prevent these words from being used again. This was done because using the same word multiple times is a strictly bad action as it provides no additional information and advances turns.
 
 ## Training
-I trained the Wordle agent for ~17 million games before evaluating its final performance. The agent converged on a strategy of starting with the word "SANER" followed by "BITTY" if all characters in "saner" were grey. "BITTY" seems suboptimal considering two T's are being used, but perhaps the agent knows something I don't :smile:.
+I trained the Wordle agent for ~17 million games before evaluating its final performance. The agent converged on a strategy of starting with the word "SANER" followed by "BITTY" if all characters in "SANER" were grey. "BITTY" seems suboptimal considering two T's are being used, but perhaps the agent knows something I don't :smile:.
 
 There were a number of notable failure cases though where the agent made mistakes an experienced human player would be unlikely to make. For example, the word "TYING":
 
